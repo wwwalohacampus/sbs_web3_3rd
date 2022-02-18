@@ -1,0 +1,222 @@
+/* reset */
+
+/*reset*/
+*{margin: 0; padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {text-decoration: inherit; color: inherit;}
+li {list-style: none;}
+img {vertical-align: middle;}
+a img {border: none;}
+address, em, i {font-style: normal;}
+
+a {
+    color:black;
+    text-decoration: none;
+}
+
+ul {
+    /* unorder-list 를 지우는 속성 */
+    list-style-type: none;
+}
+
+/* common */
+.container {
+    width: 1500px;
+    height: 1300px;
+    margin: 10px auto;
+    border: 1px dashed orange;
+    position: relative;
+    background-color: #ddd;
+}
+
+
+
+header nav {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    /* 부모요소로 absolute 상속 */
+    position: relative;
+    border-top: 2px dashed red;
+    
+}
+
+
+header nav .mainmenu {
+    /* line-height 줄간격 */
+    line-height: 60px;
+    position: absolute;
+    top:0;
+    left: 15%;
+    
+}
+
+
+
+header nav .mainmenu  li.line ul.submenu li {
+    border:none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+   
+    
+}
+
+header nav .mainmenu > li {
+    /* > 선택자 바로 밑에있는 자식선택자 */
+    float:left;
+    /*  animation 작동 */
+    transition: all 0.4s;
+    
+}
+
+/* drop-down-menu-style-1 */
+
+header nav.drop-down-menu1 {
+    position: relative;
+}
+
+header nav.drop-down-menu1 > h2 {
+    position: absolute;
+    top:60px;
+    left:30px;
+    text-align: left;
+}
+
+header nav .mainmenu > li  a {
+    /* 
+    a 태그는 inline 요소기때문에 넓이 폭이 지정이 안되기때문에  
+    width 값과 height 값을 주기위해서 line 요소인 block 요소로 교체
+    */
+    display: inline-block;
+    width: 250px;
+    height: auto;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    
+}
+
+header nav  .submenu  li:hover > a  {
+    font-weight: bold;
+    color:white;
+    cursor: pointer;
+}
+
+
+/* hover */
+
+header nav .mainmenu > li:hover{background-color: darkcyan;}
+header nav .mainmenu li:hover .submenu {background-color: #ddd;}
+header nav .mainmenu li:hover .submenu  li > a {color:darkcyan;}
+header nav .mainmenu > li:hover > a {color:white;}
+
+
+/* submenu 클래스 안에있는 컨텐츠를 안보이게 하기위해서 display:none 적용 */
+header nav .submenu.style-1 {display:none;}
+
+/* submenu 클래스 안에있는 안보였던 컨텐츠를  display:block 으로 hover 시 보이게 작동 */
+header nav .mainmenu li:hover .submenu.style-1 {
+    display: block;
+}
+
+
+/* drop-down-menu style2 */
+
+header nav.drop-down-menu2 > h2 {
+    position: absolute;
+    top:60px;
+    left:30px;
+    text-align: left;
+    background-color: red;
+    color:white;   
+}
+
+
+header nav.drop-down-menu2 {
+    margin-top: 200px;
+}
+
+header nav.drop-down-menu2 ul.mainmenu > li .submenu.style-2 {
+    height: 0px;
+    overflow:hidden;
+    transition: all 0.4s ease;
+}
+
+header nav.drop-down-menu2 ul.mainmenu > li:hover .submenu.style-2 {
+    height: 200px !important;
+    transition: all 0.4s ease;
+}
+
+
+/* drop-down-menu-style3 */
+
+header nav.drop-down-menu3 {
+    position: relative;
+}
+
+header nav.drop-down-menu3 > h2 {
+    position: absolute;
+    top:60px;
+    left:30px;
+    text-align: left;
+}
+
+
+
+header nav.drop-down-menu3 {
+    margin-top: 200px;
+}
+
+
+header nav .submenu.style-3 {
+    display:none;
+}
+
+header nav .mainmenu:hover .submenu.style-3 {
+    display:block;
+}
+
+/* drop-down-menu-style4 */
+
+header nav.drop-down-menu4 {
+    position: relative;
+}
+
+
+header nav.drop-down-menu4 {
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+
+header nav.drop-down-menu4 > h2 {
+    position: absolute;
+    top:60px;
+    left:30px;
+    text-align: left;
+}
+
+header nav .mainmenu.style-4 > li {
+    /* > 선택자 바로 밑에있는 자식선택자 */
+    clear:both !important; 
+    /*  animation 작동 */
+    transition: all 0.4s;
+    position: relative;
+    margin-top: 5px;
+}
+
+
+header .submenu.style-4 {
+    display:none;
+    position:absolute;
+    left:250px;
+    top:0;
+    
+}
+
+
+
+
+header nav.drop-down-menu4 li:hover .submenu.style-4 {
+    display:block;
+}
+
