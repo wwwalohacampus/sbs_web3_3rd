@@ -137,3 +137,14 @@ button {
 .item {
     position: relative;
 }
+
+
+#item5 .target-box.active {
+    animation: changeBG 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes changeBG {
+    0% { }
+    100% { background-color: rosybrown; }
+}
