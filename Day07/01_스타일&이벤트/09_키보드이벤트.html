@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키보드 이벤트</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const h1 = document.querySelector('h1')
+            // 익명 함수(화살표 함수)를 정의하여 print 에 대입
+            // event.KeyCode : 키보드의 키와 매핑되어 있는 순서 번호
+            const print = (event) => {
+                let output = ''
+                output += `alt : ${event.altKey}<br>`
+                output += `ctrl : ${event.ctrlKey}<br>`
+                output += `shift : ${event.shiftKey}<br>`
+                output += `KeyCode : ${event.keyCode}<br>`
+                h1.innerHTML = output
+
+                // ctrl + C
+                if( event.ctrlKey && event.keyCode == 67) {
+                    alert('이 페이지에서는 복사할 수 없습니다!')
+                }
+
+                // ctrl + space
+                if( event.ctrlKey && event.keyCode == 32) {
+                    // 네이버로 이동
+                    location.href = 'https://www.naver.com'
+                }
+            }
+
+
+            // 이벤트 등록
+            // keydown  : 키가 눌릴 때 이벤트
+            // keyup    : 키를 눌렀다 뗄 때 이벤트
+            document.addEventListener('keydown', print)
+            document.addEventListener('keyup', print)
+        })
+
+    </script>
+</head>
+<body>
+    <h1>아무키나 눌러보세요</h1>
+</body>
+</html>

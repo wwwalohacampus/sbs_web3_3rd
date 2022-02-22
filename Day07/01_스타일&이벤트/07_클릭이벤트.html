@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클릭 이벤트</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            let count = 0   // 클릭 횟수
+            let btn = document.querySelector('button')
+            let h1 = document.querySelector('h1')
+
+            // 클릭 이벤트 등록
+            btn.addEventListener('click', (evnet) => {
+                count++
+                h1.textContent = `클릭 횟수 : ${count}` // (`) 백틱, 템플릿 문자열
+            })
+
+            /* jQuery 코드 비교
+            $('button').on('click', (event) => {
+
+            })
+            */
+        })
+    </script>
+</head>
+<body>
+    <h1>클릭 횟수 : 0</h1>
+    <button>클릭</button>
+</body>
+</html>
