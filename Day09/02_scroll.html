@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll</title>
+    <script>
+        
+        // 문서 컨텐츠의 크기
+        let innerWidth = window.innerWidth
+        let innerHeight = window.innerHeight
+
+        // 문서 전체 높이
+        let htmlWidth
+        let htmlHeight 
+
+        let clienWidth
+        let clientHeight
+
+        // 문서 준비 이벤트
+        document.addEventListener('DOMContentLoaded', () => {
+            /* 
+                document.body.scrollWidth
+                document.body.scrollHeight
+                : 실제 컨텐츠 영역의 크기
+
+                document.documentElement.clientWidth
+                document.documentElement.clientHeight
+                : 실제 보여지고 있는 크기 (스크롤바, 마진 제외)
+
+                document.documentElement.offsetWidth
+                document.documentElement.offsetHeight
+                : 스크롤바 까지 포함한 영역의 크기
+
+            */
+            htmlWidth = document.body.scrollWidth
+            htmlHeight = document.body.scrollHeight
+
+            clienWidth = document.documentElement.clientWidth
+            clientHeight = document.documentElement.clientHeight
+
+            let box = document.getElementById('box')
+            let width = document.createElement('h1')
+            let height = document.createElement('h1')
+            let widthText = document.createTextNode(`페이지 전체 가로 크기 : ${htmlWidth}`)
+            let heighText = document.createTextNode(`페이지 전체 세로 크기 : ${htmlHeight}`)
+            
+            width.appendChild(widthText)
+            height.appendChild(heighText)
+
+            box.appendChild(width)
+            box.appendChild(height)
+
+        });
+
+        // 창에서 스크롤 시, 이벤트
+        let prevScrollY = 0         // 이전 스크롤 위치
+        window.addEventListener('scroll', function(event) {
+            let scrollX = window.scrollX
+            let scrollY = window.scrollY
+
+            console.log(`스크롤 X축 - 시작 위치 : ${scrollX}`)
+            console.log(`스크롤 Y축 - 시작 위치 : ${scrollY}`)
+            console.log(`스크롤 X축 - 끝 위치 : ${scrollX + innerWidth}`)
+            console.log(`스크롤 Y축 - 끝 위치 : ${scrollY + innerHeight}`)
+
+            // 스크롤 시작점
+            if( scrollY == 0 )
+                alert('스크롤 시작!')
+            if( (scrollY + innerHeight) >= htmlHeight )
+                alert('스크롤 끝!')
+
+            // 스크롤 위/아래
+            // 이전 스크롤 위치 지정
+            if( prevScrollY < scrollY ) {
+                console.log('스크롤 아래로');
+            } else {
+                console.log('스크롤 위로');
+            }
+            prevScrollY = scrollY
+
+        })
+        
+        // scroll(x, y) 
+        // : 스크롤 이동 함수
+        function scroll100 ( ) {
+            window.scroll( 0, 100 )
+        }
+        
+    </script>
+
+    
+</head>
+<body>
+    <div style="width: 4000px; height: 4000px;">
+        <div id="box"></div>
+        <button onclick="scroll100()">스크롤</button>
+    </div>
+</body>
+</html>

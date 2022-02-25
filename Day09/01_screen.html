@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>screen</title>
+    <script>
+    
+        // BOM (브라우저 객체 모델)
+        // - window 객체
+        // : DOM (문서객체모델)을 담고 있는 창을 나타낸다.
+        // 모든 브라우저에서 지원. 화면이동, 스크린 위치/크기, 뒤로/앞으로 가기
+        // window.screen
+        // : 브라우저 창의 정보들을 가진 객체
+        //   window 객체를 생략하고 사용가능.
+        //  - width, height, ...
+        let width = screen.width
+        let height = screen.height
+        let availWidth = screen.availWidth
+        let availHeight = screen.availHeight
+
+        let innerWidth = window.innerWidth
+        let innerHeight = window.innerHeight
+        let outerWidth = window.outerWidth
+        let outerHeight = window.outerHeight
+
+        document.write(`<h3>디바이스(모니터) 크기를 기준</h3><br>`)
+        document.write(`창의 가로 크기 : ${width}<br>`)
+        document.write(`창의 세로 크기 : ${height}<br>`)
+        document.write(`<br>`)
+        
+        document.write(`이용가능한 가로 크기 : ${availWidth}<br>`)
+        document.write(`이용가능한 세로 크기 : ${availHeight}<br>`)
+        document.write(`<br>`)
+        
+        // innerXXX
+        // : 브라우저의 툴바, 스크롤바 크기를 제외한 가로/세로 크기
+        document.write(`<h3>브라우저 창 크기 기준</h3><br>`)
+        document.write(`창 내부 가로 크기 : ${innerWidth}<br>`)
+        document.write(`창 내부 세로 크기 : ${innerHeight}<br>`)
+        document.write(`<br>`)
+        
+        document.write(`창 외부 가로 크기 : ${outerWidth}<br>`)
+        document.write(`창 외부 세로 크기 : ${outerHeight}<br>`)
+        document.write(`<br>`)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
