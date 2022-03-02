@@ -1,0 +1,106 @@
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+li { list-style-type: none; }
+a { text-decoration: none; color: black; }
+
+
+.wrap { width: 100%; height: 800px; } 
+
+header {
+    display: flex;
+    justify-content: space-around;
+    height: 80px;
+    background-color: cornflowerblue;
+    position: relative;
+}
+
+nav { width: 800px; }
+nav > ul { display: flex; }
+nav > ul > li {
+    padding: 20px;
+    width: 160px;
+    height: 80px;
+    text-align: center;
+    line-height: 40px;
+    background-color: cornflowerblue;
+    position: relative;
+    cursor: pointer;
+}
+nav > ul > li a { color:  white; }
+
+.logo img { height: 100%; }
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 1200px;
+    height: 400px;
+    background-color: orange;
+}
+
+/* 햄버거 메뉴 */
+.slide-open {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    position: relative;
+    z-index: 400;
+}
+
+.top, .mid, .bottom {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: white;
+}
+
+.top { top: 0; transition: all 1s;}
+.mid { top: 10px; }
+.bottom { top: 20px; transition: all 1s;}
+
+.top.on {
+    transform: translateY(10px) rotate(45deg);
+    transition: all 1s;
+}
+
+.mid.on { width: 0; }
+
+.bottom.on {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* 슬라이드 바 */
+.slide {
+    position: fixed;
+    width: 400px;
+    height: 100%;
+    left: -400px;
+    background-color: coral;
+    z-index: 200;
+}
+
+/* 슬라이드 바 백그라운드 */
+.bg {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 100;
+}
+
+/* 슬라이드 바 X 버튼 */
+.cancel {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url(../img/cancel.png) no-repeat;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+}
