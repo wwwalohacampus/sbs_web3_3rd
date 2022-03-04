@@ -22,7 +22,7 @@ h1 { text-align: center; }
     left: 0;
     padding: 0;
     font-size: 0;
-    width: 2000px;
+    /* width: 2000px; */
 }
 
 .slide-item {
@@ -35,6 +35,28 @@ h1 { text-align: center; }
 }
 
 .slide-item img { width: 100%; height: 100%; }
+
+/* 이미지 밝기 조절 */
+.slide-item img.bright-10 {
+    animation: bright-10 2s;
+    animation-fill-mode: forwards;  /* 애니메이션 마지막 상태 유지 */
+}
+
+
+.slide-item img.bright-100 {
+    animation: bright-100 2s;
+    animation-fill-mode: forwards;  /* 애니메이션 마지막 상태 유지 */
+}
+
+@keyframes bright-10 {
+    0% {}
+    100% { filter: brightness(0.1); }
+}
+
+@keyframes bright-100 {
+    0% {}
+    100% { filter: brightness(1); }
+}
 
 /* 화살표 버튼 */
 .btn-box {
@@ -93,6 +115,11 @@ h1 { text-align: center; }
     margin-left: 10px;
 }
 
+
 .dot.active {
     background-color: #fff;
+}
+
+.dot:hover {
+    background-color: aquamarine;
 }
