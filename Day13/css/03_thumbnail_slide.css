@@ -1,0 +1,77 @@
+
+* { margin: 0; padding: 0; box-sizing: border-box;}
+
+h2 { text-align: center; }
+
+/* 이미지 슬라이드 박스 */
+.container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: black;
+}
+
+/* 기본값으로 숨긴다. 선택이 된 이미지만 보여주기 위해서 */
+.mySlides { display: none; height: 500px; }
+.mySlides img { width: 100%; }
+
+.cursor { cursor: pointer; }
+
+/* 화살표 */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    border-radius: 50%;
+}
+
+/* 왼쪽 화살표 */
+.prev { 
+    left: 0;
+    background: url(../img/prev.png) no-repeat top center; 
+    background-size: 30px 30px;
+}
+
+/* 오른쪽 화살표 */
+.next { 
+    right: 0;
+    background: url(../img/next.png) no-repeat top center; 
+    background-size: 30px 30px;
+}
+
+
+/* 이미지 슬라이드 번호 */
+.numbertext {
+    color: white;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* 이미지 제목 */
+.caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    height: 50px;
+    line-height: 50px;
+    color: white;
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.column { float: left; width: calc(100% / 5); }
+.column img { width: 100%; }
+
+.off { opacity: 0.6; }
+.off:hover, .active { opacity: 1; }

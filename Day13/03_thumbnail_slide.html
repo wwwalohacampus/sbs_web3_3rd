@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>썸네일 슬라이드</title>
+    
+    <!-- css -->
+    <link rel="stylesheet" href="css/03_thumbnail_slide.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- script -->
+    <script src="js/03_thumbnail_slide.js"></script>
+
+</head>
+<body>
+    
+    <h2>Thumbnail Slide</h2>
+
+    <div class="container">
+        <!-- 슬라이드 영역-->
+        <div class="mySlides">
+            <div class="numbertext">1 / 5</div>
+            <img src="img/slide01.jpg" alt="">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">2 / 5</div>
+            <img src="img/slide02.jpg" alt="">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">3 / 5</div>
+            <img src="img/slide03.jpg" alt="">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">4 / 5</div>
+            <img src="img/slide04.jpg" alt="">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">5 / 5</div>
+            <img src="img/slide05.jpg" alt="">
+        </div>
+
+        <!-- 화살표 영역 -->
+        <a href="#" class="prev" onclick="move(-1);"></a>
+        <a href="#" class="next" onclick="move(1);"></a>
+        
+        <!-- 이미지 제목 -->
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+        <!-- 썸네일 영역 (작은 이미지 영역) -->
+        <div class="row">
+            <div class="column">
+                <img src="img/slide01.jpg" alt="이미지 01" class="off cursor dot" onclick="slide(1);">
+            </div>
+            <div class="column">
+                <img src="img/slide02.jpg" alt="이미지 02" class="off cursor dot" onclick="slide(2);">
+            </div>
+            <div class="column">
+                <img src="img/slide03.jpg" alt="이미지 03" class="off cursor dot" onclick="slide(3);">
+            </div>
+            <div class="column">
+                <img src="img/slide04.jpg" alt="이미지 04" class="off cursor dot" onclick="slide(4);">
+            </div>
+            <div class="column">
+                <img src="img/slide05.jpg" alt="이미지 05" class="off cursor dot" onclick="slide(5);">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
