@@ -1,12 +1,22 @@
+
+h2 { text-align: center; }
+
+.container {
+    width: 1100px;
+    height: 480px;
+    margin: 0 auto;
+    position: relative;
+}
+
 .slide-container {
-    width: 1200px;
+    width: 100%;
     height: 480px;
     margin: 150px auto;
 }
 
 
 .slide {
-    width: auto;
+    width: 700px;
     height: 480px;
     padding: 20px;
     box-sizing: border-box;
@@ -16,4 +26,103 @@
 .slide img { 
     width: 100%;
     height: 100%;
+    border-radius: 50px;
 }
+
+/* slick - 네비게이션 화살표 */
+.slick-prev::before,
+.slick-next::before {
+    color: black;
+}
+
+
+/* 네비게이션 화살표 커스텀 */
+.prev-arrow {
+    position: absolute;
+    left: 2%;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translateY(-50%);
+    z-index: 100;
+    background: url(../img/prev.png) no-repeat center center / 40px 40px;
+    outline: none;
+    border: none;
+    filter: brightness(40%);
+    cursor: pointer;
+}
+
+.next-arrow {
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translateY(-50%);
+    z-index: 100;
+    background: url(../img/next.png) no-repeat center center / 40px 40px;
+    outline: none;
+    border: none;
+    filter: brightness(40%);
+    cursor: pointer;
+}
+
+.prev-arrow:hover,
+.next-arrow:hover {
+    filter: brightness(100%);
+}
+
+
+/* 네비게이션 닷츠 커스텀 */
+.slick-dots {
+    position: absolute;
+    bottom: -20px;
+}
+
+.slick-dots li { margin-right: 20px; }
+.slick-dots li button { }
+/* 닷츠 */
+.slick-dots li button::before { color: sandybrown; }
+/* 현재 닷츠 */
+.slick-dots li.slick-active button::before { color: orange; }
+/* 닷츠 - 모양 */
+.slick-dots li button::before {
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    background-color: sandybrown;
+    transform: rotate(45deg);
+}
+
+.nav-btn {
+    display: block;
+    padding: 5px;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    line-height: 20px;
+    background-color: rgb(240, 196, 158);
+    border-radius: 50%;
+    color: white;
+    box-sizing: border-box;
+}
+.slick-dots li.slick-active .nav-btn {
+    background-color: orange;
+}
+
+
+.page {
+    position: absolute;
+    bottom: -5%;
+    right: 5%;
+    font-size: 20px;
+
+    z-index: 100;
+}
+
+
+/* 슬라이드 커스텀 */
+.slick-slide {opacity: 0.3;}
+.slick-current { opacity: 1; }
+
+.sm-slide { width: 400px;}

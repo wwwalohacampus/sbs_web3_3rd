@@ -113,7 +113,7 @@ $(function () {
     
     // 7. 다음 버튼(→) 클릭 이벤트
     $('.next').on('click', ()=> {
-
+        
         // 1) 맨 왼쪽 슬라이드가 맨 오른쪽으로 이동한다.
         currentPosition += slideWidth
         list.css( {left : currentPosition})
@@ -141,7 +141,6 @@ $(function () {
         
         $('.dot').removeClass('active')
         $('.dot:nth-child(' + currentNo + ')').addClass('active')
-
 
     })
 
@@ -207,7 +206,7 @@ $(function () {
         // 요소.trigger(이벤트타입)
         // - 요소에 이벤트를 강제 발생시키는 메소드
         if( !pause ) {
-            $('.next').trigger('click')
+            // $('.next').trigger('click')
         }
     }, 3000)
 

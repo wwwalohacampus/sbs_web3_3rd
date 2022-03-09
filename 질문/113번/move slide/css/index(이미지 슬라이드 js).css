@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color:white;
+}
+
+h1 {text-align: center;}
+
+.container {
+    /* 
+    뷰포트 보여지는 영역 1vw = 1% 
+    ex 500px 너비의 뷰포트일때 1vw = 5px
+    https://nykim.work/85 반응형 웹 보기
+    */
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+     
+    
+}
+
+#slide {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 100px auto;
+    padding: 10px;
+    
+}
+
+.slide-list {
+    /* 
+    position 을이용해서 400 x 5 장 이미지  
+    2000px 의 폭을 만든 슬라이드 구동 준비
+    */
+    position: absolute;
+    left:0;
+    padding: 0;
+    font-size: 0;
+    
+}
+
+.slide-item {
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    display: inline-block;
+}
+
+.slide-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+
+/* js 구동 addClass 가상 클래스  이미지 밝기조정 */
+.slide-item img.bright-10 {
+    animation : bright-10 2s;
+    /* 애니메이션 마지막 상태 유지 */
+    animation-fill-mode : forwards 
+}
+
+.slide-item img.bright-100 {
+    animation: bright-100 2s;
+    /* 애니메이션 마지막 상태 유지 */
+    animation-fill-mode: forwards;
+}
+
+@keyframes bright-10 {
+    0%{}
+    100%{filter: brightness(0.1)}
+}
+
+@keyframes bright-100 {
+    0%{}
+    100%{filter: brightness(1)}
+}
+
+
+
+.btn-box {
+    width: 100%;
+    height: 100%;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    /* border: 1px solid red; */
+}
+
+.btn {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    z-index: 300;
+    /* 이전 다음 글자 왼쪽으로 밀어버림 */
+    text-indent: -9999px;
+
+}
+
+.next {
+    /* 정렬 오른쪽 */
+    justify-self: flex-start;
+    /* 주축을 지점으로 가운데정렬 */
+    align-self: center;
+    /* 
+    background-img : url()
+    background-repeat: no-repeat;
+    background-position: left top
+    background-size: 100%
+    */
+    /* position: absolute;
+    right:-5px;
+    top:35%; */
+    background: url(../img/arrow.png) no-repeat left top;
+    background-size: 70% 70%;
+    
+}
+
+
+
+
+.prev {
+    /* 정령 시작쪽 */
+    justify-self: flex-end;
+    /* 주축을 지점으로 가운데 */
+    align-self: center;
+    /*
+    background-img : url()
+    background-repeat: no-repeat;
+    background-position: left top
+    background-size: 100%
+    */
+    /* position: absolute;
+    left:10px;
+    top:35%; */
+    background: url(../img/arrow-left.png) no-repeat left top;
+    background-size: 70% 70%;
+}
+
+
+
+/* dots 점 (페이제 네비게이션) */
+
+.dots-box {
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    bottom:30%;
+    left:50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    
+}
+
+.dot {
+    position: relative;
+    background-color: #aaa;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-left:10px ;
+    
+}
+
+.dot.active {
+    background-color: lightseagreen;
+}
+
+.dot:hover {
+    background-color:cornflowerblue;
+}
+
