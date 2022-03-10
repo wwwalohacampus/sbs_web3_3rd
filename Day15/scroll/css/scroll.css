@@ -1,0 +1,43 @@
+
+html {
+    /* 스크롤 이동 시, 부드럽에 이동 */
+    /* scroll-behavior: smooth; */
+}
+
+
+.wrap {
+    width: 100%;
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    background-color: royalblue;
+    z-index: 3;
+}
+
+.scroll-title { position: relative; left: 80vw; }
+.scroll-title h2 { font-size: 100px; }
+
+.floating {
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    width: 100px;
+    height: 100px;
+    background-color: slateblue;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.floating a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: white;
+}

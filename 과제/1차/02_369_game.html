@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>369 게임</title>
+    <script>
+
+        function ThreeSixNine() {
+
+            let result = ''
+
+            for (let i = 1; i <= 100; i++) {
+
+                // one의자리 
+                let one = i % 10
+                // ten의자리 - parseInt() : 정수값으로 변환하는 메서드
+                let ten = parseInt( i / 10 )
+
+                let one369 = ( one == 3 || one == 6 || one == 9 )
+                let ten369 = ( ten == 3 || ten == 6 || ten == 9 )
+
+                // ten, one 자리 둘다 3,6,9 인 경우
+                if( one369 && ten369 ) {
+                    result += '**'
+                } 
+                // ten, one 자리 둘 중 하나만 3,6,9 인 경우
+                else if( one369 || ten369 ) {
+                    result += '*'
+                } 
+                // 그 외
+                else {
+                    result += i
+                }
+                result += '<br>'
+            }
+            document.write(result)
+
+        }
+
+        // 함수 호출
+        ThreeSixNine()
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
