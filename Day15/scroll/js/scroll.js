@@ -10,12 +10,12 @@ $(function() {
         - 최대 지점 (left)
     */
     let prev = $(this).scrollTop            // 이전 스크롤 위치
-    let move = 100                           // 텍스트 이동 크기
+    let move = 100                          // 텍스트 이동 크기
     let leftMin = -1200                     // 왼쪽 최대 지점
     let leftMax = 1200                      // 오른쪽 최대 지점
 
     // 스크롤 이벤트
-    $(window).on('scroll', function() {
+    $(window).on('scroll', function(e) {
         let now = $(this).scrollTop()       // 현재 스크롤 위치
 
         // 따라 다니는 플로팅 버튼
@@ -29,7 +29,6 @@ $(function() {
         else {
             $('header').slideDown()
         }
-
 
         // scroll-title 인터렉션
         let titleOffset = $('.scroll-title').offset()
@@ -49,6 +48,18 @@ $(function() {
 
         // 스크롤 맨 위로 이동
         $('html').animate({'scroll-top' : 0}, 1000)
+    })
+
+
+    // 마우스 휠(스크롤) 방향을 감지
+    $(window).on('mousewheel', function(e) {
+
+        if (e.originalEvent.wheelDelta > 0) {
+            console.log('위');
+        } else {
+            console.log('아래');
+        }
+
     })
 
 })

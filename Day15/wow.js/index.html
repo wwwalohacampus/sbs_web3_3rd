@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wow.js 플러그인</title>
+
+    <!-- animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- wow.js 플러그인 -->
+    <script src="js/wow.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/script.js"></script>
+
+</head>
+<body>
+    <div class="empty"></div>
+
+    <!-- 
+        wow.js 적용하기
+        1. 스크롤 애니메이션 적용될 요소에 특정 클래스 추가하기
+            ex) class="wow"
+        2. 애니메이션 재생시간을 data-wow-duration 속성에 지정하기
+            ex) data-wow-duration="2s"
+        3. 애니메이션 지연시간을 data-wow-delay 속성에 지정하기
+            ex) data-wow-delay="0.5s"
+        
+        * 스크롤 활성화가 되었을 때, 1번만 적용되고 반복적용은 미지원
+    -->
+    <div class="animate-box">
+        <h1 class="wow " data-wow-duration="1s" data-wow-delay="0.3s">애니메이션</h1>
+    </div>
+
+    <div class="empty"></div>
+</body>
+</html>

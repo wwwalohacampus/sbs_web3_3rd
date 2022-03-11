@@ -1,0 +1,18 @@
+.empty { height: 2000px; }
+
+.animate-box {
+    text-align: center;
+    height: 400px;
+    line-height: 400px;
+    background-color: cornflowerblue;
+    color: white;
+    font-size: 50px;
+}
+
+.animated {
+    animation-name: slideUp;
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(20%); opacity: 0.3; }
+}
