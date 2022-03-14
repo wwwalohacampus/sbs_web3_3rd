@@ -11,8 +11,8 @@ $(function() {
     */
     let prev = $(this).scrollTop            // 이전 스크롤 위치
     let move = 100                          // 텍스트 이동 크기
-    let leftMin = -1200                     // 왼쪽 최대 지점
-    let leftMax = 1200                      // 오른쪽 최대 지점
+    let leftMin = -2000                     // 왼쪽 최대 지점
+    let leftMax = 2000                      // 오른쪽 최대 지점
 
     // 스크롤 이벤트
     $(window).on('scroll', function(e) {
@@ -34,10 +34,10 @@ $(function() {
         let titleOffset = $('.scroll-title').offset()
         let left = titleOffset.left
 
-        if( now > prev && left > leftMin && now > 0 && now < 1000 ) {
-            $('.scroll-title').animate({'left' : left-= move}, 5)
-        } else if( now < prev && left < leftMax && now < 1000 ) {
+        if( now > prev && left < leftMax && now > 0 && now < 1000 ) {
             $('.scroll-title').animate({'left' : left+= move}, 5)
+        } else if( now < prev && left > leftMin && now < 1000 ) {
+            $('.scroll-title').animate({'left' : left-= move}, 5)
         }
 
         prev = now

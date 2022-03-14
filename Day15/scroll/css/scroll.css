@@ -19,7 +19,7 @@ header {
     z-index: 3;
 }
 
-.scroll-title { position: relative; left: 80vw; }
+.scroll-title { position: relative; left: -2000px; }
 .scroll-title h2 { font-size: 100px; }
 
 .floating {

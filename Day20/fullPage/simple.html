@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>fullPage.js A simple Demo</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage very simple demo." />
+	<meta name="keywords"  content="fullpage,jquery,demo,simple" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="css/examples.css" />
+	<link rel="stylesheet" href="css/style.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="vendors/scrolloverflow.js"></script>
+
+    <script type="text/javascript" src="js/jquery.fullpage.js"></script>
+	<script src="js/script.js"></script>	
+
+</head>
+<body>
+
+<ul id="menu">
+	<li data-menuanchor="page1" class="active"><a href="#page1">1</a></li>
+	<li data-menuanchor="page2"><a href="#page2">2</a></li>
+	<li data-menuanchor="page3"><a href="#page3">3</a></li>
+	<li data-menuanchor="page4"><a href="#page4">4</a></li>
+	<li data-menuanchor="footer"><a href="#footer">footer</a></li>
+</ul>
+
+<div id="fullpage">
+	<!-- class="section" 으로 지정 -->
+	<!-- id="sectionN" (section0, section1, section2 ...) -->
+	<div class="section active" id="section0">
+		<h1>fullPage.js</h1>
+	</div>
+	<div class="section" id="section1">
+	    <div class="slide "><h1>Simple Demo</h1></div>
+	    <div class="slide active"><h1>Only text</h1></div>
+	    <div class="slide"><h1>And text</h1></div>
+	    <div class="slide"><h1>And more text</h1></div>
+	</div>
+	<div class="section" id="section2">
+		<h1>No wraps, no extra markup</h1>
+	</div>
+	<div class="section" id="section3">
+		<h1>Just the simplest demo ever</h1>
+	</div>
+	<footer class="section fp-auto-height" id="section4">
+		<div class="box">
+			<h1>FOOTER</h1>
+		</div>
+	</footer>
+</div>
+
+</body>
+</html>
