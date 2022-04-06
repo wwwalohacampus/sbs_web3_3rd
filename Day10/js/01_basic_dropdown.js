@@ -22,7 +22,7 @@ $(function () {
         // 메인메뉴의 자식 서브메뉴만
         // $(this).children('.submenu').stop().slideToggle(500)
         // 모든 서브메뉴
-        $('.submenu').stop().slideToggle(500)
+        // $('.submenu').stop().slideToggle(500)
     })
 
 

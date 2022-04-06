@@ -206,7 +206,7 @@ $(function () {
         // 요소.trigger(이벤트타입)
         // - 요소에 이벤트를 강제 발생시키는 메소드
         if( !pause ) {
-            // $('.next').trigger('click')
+            $('.next').trigger('click')
         }
     }, 3000)
 

@@ -9,7 +9,7 @@ $(function() {
         - 최소 지점 (left)
         - 최대 지점 (left)
     */
-    let prev = $(this).scrollTop            // 이전 스크롤 위치
+    let prev = $(this).scrollTop()            // 이전 스크롤 위치
     let move = 100                          // 텍스트 이동 크기
     let leftMin = -2000                     // 왼쪽 최대 지점
     let leftMax = 2000                      // 오른쪽 최대 지점
